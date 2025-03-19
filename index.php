@@ -53,6 +53,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sewa = $_POST["sewa"];
     $item = $_POST["item"];
 
+     // Bersihkan formulir jika tidak ada error
+     if (empty($namaErr) && empty($emailErr) && empty($nomorErr) && empty($alamatErr) && empty($tanggalErr)) {
+        $nama = $email = $nomor = $alamat = $tanggal_mulai = $tanggal_selesai = "";
+    }
    
 }
 
@@ -152,14 +156,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </thead>
                 <tbody>
                     <tr>
-                        <td><?php echo $nama; ?></td>
-                        <td><?php echo $email; ?></td>
-                        <td><?php echo $nomor; ?></td>
-                        <td><?php echo $sewa; ?></td>
-                        <td><?php echo $item; ?></td>
-                        <td><?php echo $alamat; ?></td>
-                        <td><?php echo  $tanggal_mulai; ?></td>
-                        <td><?php echo  $tanggal_selesai; ?></td>
+                    <td><?php echo $_POST["nama"]; ?></td>
+                            <td><?php echo $_POST["email"]; ?></td>
+                            <td><?php echo $_POST["nomor"]; ?></td>
+                            <td><?php echo $_POST["sewa"]; ?></td>
+                            <td><?php echo $_POST["item"]; ?></td>
+                            <td><?php echo $_POST["alamat"]; ?></td>
+                            <td><?php echo $_POST["tanggal_mulai"]; ?></td>
+                            <td><?php echo $_POST["tanggal_selesai"]; ?></td>
                     </tr>
                 </tbody>
             </table>
